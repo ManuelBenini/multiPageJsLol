@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Multi-Link Opener</title>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() { 
+            const urlParams = new URLSearchParams(window.location.search);
+            let championName = urlParams.get('c') || 'garen';
+
+            console.log("Nome campione preso da url", championName)
+            
+            const urls = [
+                `https://u.gg/lol/champions/${championName}/build/`,
+                `https://lolalytics.com/it/lol/${championName}/build/`,
+                `https://www.op.gg/champions/${championName}`,
+                `https://www.leagueofgraphs.com/champions/build/${championName}`,
+                `https://blitz.gg/lol/champions/${championName}`
+            ];
+
+            urls.forEach(url => {
+                window.open(url, '_blank');
+            });
+
+            window.close(); 
+        });
+    </script>
+</head>
+<body>
+    <p>Apertura dei link in corso...</p>
+</body>
+</html>
