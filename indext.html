@@ -8,13 +8,16 @@
             let championName = urlParams.get('c') || 'garen';
 
             console.log("Nome campione preso da url", championName)
+            console.log("Nome modificato", championName.charAt(0).toUpperCase() + championName.slice(1))
             
             const urls = [
-                `https://u.gg/lol/champions/${championName}/build/`,
                 `https://lolalytics.com/it/lol/${championName}/build/`,
+                `https://mobalytics.gg/lol/champions/${championName}/build`,
+                `https://u.gg/lol/champions/${championName}/build/`,
                 `https://www.op.gg/champions/${championName}`,
-                `https://www.leagueofgraphs.com/champions/build/${championName}`,
-                `https://blitz.gg/lol/champions/${championName}`
+                `https://blitz.gg/lol/champions/${championName}`,
+                `https://probuildstats.com/champion/${championName}`,
+                `https://www.probuild.gg/champions/builds/${championName.charAt(0).toUpperCase() + championName.slice(1)}?league=major`
             ];
 
             urls.forEach(url => {
@@ -28,4 +31,5 @@
 <body>
     <p>Apertura dei link in corso...</p>
 </body>
+
 </html>
